@@ -16,6 +16,8 @@ namespace DCC_3_GameBoard
         }
     }
 
+    // checking 
+
     class GameBoardSetUp : GameBoard
     {
         int width = 0;
