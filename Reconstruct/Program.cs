@@ -4,22 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// GameBoard
+
 namespace DCC_3_GameBoard
 {
-    class Program
+
+    public class BoardGame
     {
-        static void Main(string[] args)
-        {
-            var stuff = new GameBoardSetUp();
-            stuff.CallSize();
 
-        }
-    }
-
-    // checking 
-
-    class GameBoardSetUp : GameBoard
-    {
         int width = 0;
         int height = 0;
 
@@ -33,34 +25,38 @@ namespace DCC_3_GameBoard
 
             Draw(width, height);
         }
-    }
 
-    class GameBoard : Connect4GameSetUp
-    {
-        char arrayCount = 'A';
 
-        public void Draw(int width, int height)
+        static void Main(string[] args)
         {
+            BoardGame dataStorage = new BoardGame();
+            dataStorage.CallSize();
+        }
+
+        public void Draw(int w, int h)
+        {
+            char arrayCount = 'A';
+
             do
             {
-                for (int column = 0; column < width; column++)
+                for (int column = 0; column < w; column++)
                 {
                     Console.Write(" {0} ", arrayCount++);
-                    if (column == width - 1)
+                    if (column == w - 1)
                     {
                         break;
                     }
                     Console.Write("|");
                 }
-                height--;
+                h--;
                 Console.WriteLine();
 
-                if (height > 0)
+                if (h > 0)
                 {
-                    for (int row = 0; row < width; row++)
+                    for (int row = 0; row < w; row++)
                     {
                         Console.Write("---");
-                        if (row == width - 1)
+                        if (row == w - 1)
                         {
                             break;
                         }
@@ -69,9 +65,11 @@ namespace DCC_3_GameBoard
                     Console.WriteLine();
                 }
             }
-            while (height > 0);
+            while (h > 0);
         }
     }
+
+    
 
     class Connect4GameSetUp
     {
