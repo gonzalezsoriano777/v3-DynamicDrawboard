@@ -33,30 +33,30 @@ namespace DCC_3_GameBoard
             dataStorage.CallSize();
         }
 
-        public void Draw(int w, int h)
+        public void Draw(int width, int height)
         {
             char arrayCount = 'A';
 
             do
             {
-                for (int column = 0; column < w; column++)
+                for (int column = 0; column < width; column++)
                 {
                     Console.Write(" {0} ", arrayCount++);
-                    if (column == w - 1)
+                    if (column == width - 1)
                     {
                         break;
                     }
                     Console.Write("|");
                 }
-                h--;
+                height--;
                 Console.WriteLine();
 
-                if (h > 0)
+                if (height > 0)
                 {
-                    for (int row = 0; row < w; row++)
+                    for (int row = 0; row < width; row++)
                     {
                         Console.Write("---");
-                        if (row == w - 1)
+                        if (row == width - 1)
                         {
                             break;
                         }
@@ -65,7 +65,7 @@ namespace DCC_3_GameBoard
                     Console.WriteLine();
                 }
             }
-            while (h > 0);
+            while (height > 0);
         }
     }
 
