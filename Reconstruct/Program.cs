@@ -1,84 +1,54 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// GameBoard
-
-namespace DCC_3_GameBoard
+namespace DynamicDrawboard
 {
-
-    public class BoardGame
+    public class Drawboard
     {
-
-        int width = 0;
-        int height = 0;
-
-        public void CallSize()
-        {
-            Console.Write("Enter a width: ");
-            width = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter a height: ");
-            height = Convert.ToInt32(Console.ReadLine());
-
-            Draw(width, height);
-        }
-
 
         static void Main(string[] args)
         {
-            BoardGame dataStorage = new BoardGame();
-            dataStorage.CallSize();
+            // Console.WriteLine("hello, world!!");
+            Drawboard store = new Drawboard();
+            store.Board(3, 3);
         }
 
-        public void Draw(int width, int height)
+        // Properties used for the board 
+        string charspacing = " ";
+        char width = '|';
+        string height = "++";
+
+
+        public void Board(int h, int w)
         {
-            char arrayCount = 'A';
+            int n = w * 2;
 
-            do
+            // Rows, in width
+            for (int i = 0; i < n; i++)
             {
-                for (int column = 0; column < width; column++)
-                {
-                    Console.Write(" {0} ", arrayCount++);
-                    if (column == width - 1)
-                    {
-                        break;
-                    }
-                    Console.Write("|");
-                }
-                height--;
-                Console.WriteLine();
 
-                if (height > 0)
+                Console.Write("\n");
+
+                // Columns, in height
+                for (int j = 0; j < h; j++)
                 {
-                    for (int row = 0; row < width; row++)
+                    if (i % 2 == 1)
                     {
-                        Console.Write("---");
-                        if (row == width - 1)
-                        {
-                            break;
-                        }
-                        Console.Write("+");
+                        Console.Write(height);
                     }
-                    Console.WriteLine();
+
+                    if (i % 2 == 0)
+                    {
+                        Console.Write(charspacing + width);
+                    }
                 }
             }
-            while (height > 0);
+
+            Console.ReadLine();
         }
-    }
-
-    
-
-    class Connect4GameSetUp
-    {
-        int tokenLocation = 0;
-        string userColumnSelect = null;
-        List<int> arrayRed = new List<int> { };
-        List<int> arrayBlue = new List<int> { };
-        IDictionary<int, string> boardPieces = new Dictionary<int, string>();
-        List<string> columnA = new List<string> { };
-        bool isSpaceTaken = false;
     }
 }
