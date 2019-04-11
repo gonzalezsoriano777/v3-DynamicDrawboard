@@ -6,21 +6,18 @@ using System.Threading.Tasks;
 
 namespace DCC_3_GameBoard
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-            var stuff = new GameBoardSetUp();
-            stuff.CallSize();
-
-        }
-    }
-
-    class GameBoardSetUp : GameBoard
+    public class GameBoardSetUp
     {
         int width = 0;
         int height = 0;
+
+        static void Main(string[] args)
+        {
+
+            GameBoardSetUp stuff = new GameBoardSetUp();
+            stuff.CallSize();
+
+        }
 
         public void CallSize()
         {
@@ -32,54 +29,77 @@ namespace DCC_3_GameBoard
 
             Draw(width, height);
         }
-    }
 
-    class GameBoard : Connect4GameSetUp
-    {
-        char arrayCount = 'A';
-
-        public void Draw(int width, int height)
-        {
-            do
+            public void Draw(int width, int height)
             {
-                for (int column = 0; column < width; column++)
-                {
-                    Console.Write(" {0} ", arrayCount++);
-                    if (column == width - 1)
-                    {
-                        break;
-                    }
-                    Console.Write("|");
-                }
-                height--;
-                Console.WriteLine();
+                char arrayCount = 'A';
 
-                if (height > 0)
+                do
                 {
-                    for (int row = 0; row < width; row++)
+                    for (int column = 0; column < width; column++)
                     {
-                        Console.Write("---");
-                        if (row == width - 1)
+                        Console.Write(" {0} ", arrayCount++);
+                        if (column == width - 1)
                         {
                             break;
                         }
-                        Console.Write("+");
+                        Console.Write("|");
                     }
+                    height--;
                     Console.WriteLine();
+
+                    if (height > 0)
+                    {
+                        for (int row = 0; row < width; row++)
+                        {
+                            Console.Write("---");
+                            if (row == width - 1)
+                            {
+                                break;
+                            }
+                            Console.Write("+");
+                        }
+                        Console.WriteLine();
+                    }
                 }
+                while (height > 0);
             }
-            while (height > 0);
         }
+
     }
 
-    class Connect4GameSetUp
+
+
+public class Connect4GameSetUp
+{
+    public int row;
+    public int column;
+    public int coins;
+    public bool LockedIn;
+
+    public Connect4GameSetUp()
     {
-        int tokenLocation = 0;
-        string userColumnSelect = null;
-        List<int> arrayRed = new List<int> { };
-        List<int> arrayBlue = new List<int> { };
-        IDictionary<int, string> boardPieces = new Dictionary<int, string>();
-        List<string> columnA = new List<string> { };
-        bool isSpaceTaken = false;
+        this.coins = 2;
+        this.row = 6;
+        this.column = 7;
+        this.LockedIn = true;
     }
-}
+        
+        public void Row()
+        {
+            
+        }
+        
+
+        public void Column()
+        {
+            
+        }
+        
+
+        public void Lockedin()
+        {
+            
+        }
+
+    }
