@@ -72,32 +72,28 @@ namespace DCC_3_GameBoard
 
 public class Connect4GameSetUp
 {
-    public int row;
-    public int column;
+    public int location;
     public int coins;
     public bool LockedIn;
 
     public Connect4GameSetUp()
     {
         this.coins = 2;
-        this.row = 6;
-        this.column = 7;
+        this.location = 0;
         this.LockedIn = true;
     }
         
-        public void Row()
+        public void Location()
         {
             
         }
         
-
-        public void Column()
+        public void Chips()
         {
-            
-        }
-        
 
-        public void Lockedin()
+        }
+
+        public void Locked()
         {
             
         }
