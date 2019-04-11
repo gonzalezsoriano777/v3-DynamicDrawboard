@@ -74,7 +74,7 @@ public class Connect4GameSetUp
 {
     public int location;
     public int coins;
-    public bool LockedIn;
+    public bool Lockedin;
 
     public Connect4GameSetUp()
     {
