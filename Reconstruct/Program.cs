@@ -82,20 +82,22 @@ public class Connect4GameSetUp
         this.location = 0;
         this.lockedin = true;
     }
+        // commented fn, apply data to board
+        public String[,] board { get; set; }
         
         public void Location()
         {
-            
+            return 0;   
         }
         
         public void Coins()
         {
-           
+            return 0;
         }
-        // set
+        
         public void LockedIn()
         {
-            
+            return 0;
         }
 
     }
