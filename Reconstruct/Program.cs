@@ -74,13 +74,13 @@ public class Connect4GameSetUp
 {
     public int location;
     public int coins;
-    public bool LockedIn;
+    public bool lockedin;
 
     public Connect4GameSetUp()
     {
         this.coins = 2;
         this.location = 0;
-        this.LockedIn = true;
+        this.lockedin = true;
     }
         
         public void Location()
@@ -88,12 +88,12 @@ public class Connect4GameSetUp
             
         }
         
-        public void Chips()
+        public void Coins()
         {
-
+           
         }
 
-        public void Locked()
+        public void LockedIn()
         {
             
         }
